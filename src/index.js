@@ -1,5 +1,5 @@
 import {StrategyGenerator} from "./generator/strategy-generator"
-import {DefaultStrategyGenerator} from "./generator/default-strategy-generatorr"
+import {DefaultStrategyGenerator} from "./generator/default-strategy-generator"
 
 export function configure(aurelia) {
     aurelia.container.registerInstance(StrategyGenerator, new DefaultStrategyGenerator());

@@ -1,4 +1,4 @@
-import {StrategyGenerator} from "strategy-generator"
+import {StrategyGenerator} from "./strategy-generator"
 
 export class DefaultStrategyGenerator extends StrategyGenerator
 {

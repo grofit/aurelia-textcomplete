@@ -1,4 +1,4 @@
-System.register(["strategy-generator"], function (_export) {
+System.register(["./strategy-generator"], function (_export) {
     "use strict";
 
     var StrategyGenerator, DefaultStrategyGenerator;

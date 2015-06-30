@@ -1,4 +1,4 @@
-define(["exports", "strategy-generator"], function (exports, _strategyGenerator) {
+define(["exports", "./strategy-generator"], function (exports, _strategyGenerator) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {

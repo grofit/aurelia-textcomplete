@@ -9,9 +9,7 @@ System.config({
 System.config({
   "map": {
     "aurelia-framework": "github:aurelia/framework@0.8.8",
-    "jquery": "github:jquery/jquery@2.1.4",
-    "jquery-textcomplete": "github:yuku-t/jquery-textcomplete@0.6.1",
-    "md5": "github:blueimp/JavaScript-MD5@1.1.0",
+    "yuku-t/jquery-textcomplete": "github:yuku-t/jquery-textcomplete@0.6.1",
     "github:aurelia/binding@0.3.7": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.5",
       "aurelia-metadata": "github:aurelia/metadata@0.3.4",
@@ -57,6 +55,9 @@ System.config({
     },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
+    },
+    "github:yuku-t/jquery-textcomplete@0.6.1": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:MD5@1.2.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",

@@ -46,8 +46,7 @@
     },
     "dependencies": {
       "aurelia-framework": "github:aurelia/framework@^0.12.0",
-      "jquery": "github:jquery/jquery@2.1.4",
-      "jquery-textcomplete": "github:yuku-t/jquery-textcomplete@^0.6.1"
+      "yuku-t/jquery-textcomplete": "github:yuku-t/jquery-textcomplete@^0.6.1"
     }
   }
 }

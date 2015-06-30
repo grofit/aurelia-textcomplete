@@ -1,4 +1,4 @@
-System.register(["./generator/strategy-generator", "./generator/default-strategy-generatorr"], function (_export) {
+System.register(["./generator/strategy-generator", "./generator/default-strategy-generator"], function (_export) {
     "use strict";
 
     var StrategyGenerator, DefaultStrategyGenerator;
@@ -14,8 +14,8 @@ System.register(["./generator/strategy-generator", "./generator/default-strategy
     return {
         setters: [function (_generatorStrategyGenerator) {
             StrategyGenerator = _generatorStrategyGenerator.StrategyGenerator;
-        }, function (_generatorDefaultStrategyGeneratorr) {
-            DefaultStrategyGenerator = _generatorDefaultStrategyGeneratorr.DefaultStrategyGenerator;
+        }, function (_generatorDefaultStrategyGenerator) {
+            DefaultStrategyGenerator = _generatorDefaultStrategyGenerator.DefaultStrategyGenerator;
         }],
         execute: function () {}
     };

@@ -1,4 +1,4 @@
-define(["exports", "./generator/strategy-generator", "./generator/default-strategy-generatorr"], function (exports, _generatorStrategyGenerator, _generatorDefaultStrategyGeneratorr) {
+define(["exports", "./generator/strategy-generator", "./generator/default-strategy-generator"], function (exports, _generatorStrategyGenerator, _generatorDefaultStrategyGenerator) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
@@ -7,7 +7,7 @@ define(["exports", "./generator/strategy-generator", "./generator/default-strate
     exports.configure = configure;
 
     function configure(aurelia) {
-        aurelia.container.registerInstance(_generatorStrategyGenerator.StrategyGenerator, new _generatorDefaultStrategyGeneratorr.DefaultStrategyGenerator());
+        aurelia.container.registerInstance(_generatorStrategyGenerator.StrategyGenerator, new _generatorDefaultStrategyGenerator.DefaultStrategyGenerator());
         aurelia.globalizeResources("./elements/text-complete-element");
         aurelia.globalizeResources("./elements/token-complete-element");
     }
