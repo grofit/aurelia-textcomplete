@@ -1,4 +1,4 @@
-define(["exports", "aurelia-framework", "../generator/strategy-generator", "jquery"], function (exports, _aureliaFramework, _generatorStrategyGenerator, _jquery) {
+define(["exports", "aurelia-framework", "../generator/strategy-generator", "jquery", "yuku-t/jquery-textcomplete"], function (exports, _aureliaFramework, _generatorStrategyGenerator, _jquery, _yukuTJqueryTextcomplete) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -14,6 +14,8 @@ define(["exports", "aurelia-framework", "../generator/strategy-generator", "jque
   function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer.call(target); Object.defineProperty(target, key, descriptor); }
 
   var _jquery2 = _interopRequireDefault(_jquery);
+
+  var _textcomplete = _interopRequireDefault(_yukuTJqueryTextcomplete);
 
   var TokenCompleteElement = (function () {
     var _instanceInitializers = {};
@@ -50,7 +52,7 @@ define(["exports", "aurelia-framework", "../generator/strategy-generator", "jque
         var matchRegex = this.strategyGenerator.getDefaultMatch(this.token);
         var strategy = this.strategyGenerator.createStrategy(matchRegex, this.search, this.replace, 2, this.template);
 
-        (0, _jquery2["default"])(_textArea).textcomplete([strategy], this.nativeOptions);
+        (0, _jquery2["default"])(this._textArea).textcomplete([strategy], this.nativeOptions);
       }
     }, {
       key: "token",
@@ -80,8 +82,8 @@ define(["exports", "aurelia-framework", "../generator/strategy-generator", "jque
     }], null, _instanceInitializers);
 
     TokenCompleteElement = (0, _aureliaFramework.inject)(_generatorStrategyGenerator.StrategyGenerator)(TokenCompleteElement) || TokenCompleteElement;
-    TokenCompleteElement = (0, _aureliaFramework.useView)("./text-complete-element.html")(TokenCompleteElement) || TokenCompleteElement;
-    TokenCompleteElement = (0, _aureliaFramework.customElement)("text-complete")(TokenCompleteElement) || TokenCompleteElement;
+    TokenCompleteElement = (0, _aureliaFramework.useView)("./token-complete-element.html")(TokenCompleteElement) || TokenCompleteElement;
+    TokenCompleteElement = (0, _aureliaFramework.customElement)("token-complete")(TokenCompleteElement) || TokenCompleteElement;
     return TokenCompleteElement;
   })();
 

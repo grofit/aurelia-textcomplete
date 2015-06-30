@@ -20,6 +20,10 @@ var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _yukuTJqueryTextcomplete = require("yuku-t/jquery-textcomplete");
+
+var _yukuTJqueryTextcomplete2 = _interopRequireDefault(_yukuTJqueryTextcomplete);
+
 var TokenCompleteElement = (function () {
   var _instanceInitializers = {};
 
@@ -55,7 +59,7 @@ var TokenCompleteElement = (function () {
       var matchRegex = this.strategyGenerator.getDefaultMatch(this.token);
       var strategy = this.strategyGenerator.createStrategy(matchRegex, this.search, this.replace, 2, this.template);
 
-      (0, _jquery2["default"])(_textArea).textcomplete([strategy], this.nativeOptions);
+      (0, _jquery2["default"])(this._textArea).textcomplete([strategy], this.nativeOptions);
     }
   }, {
     key: "token",
@@ -85,8 +89,8 @@ var TokenCompleteElement = (function () {
   }], null, _instanceInitializers);
 
   TokenCompleteElement = (0, _aureliaFramework.inject)(_generatorStrategyGenerator.StrategyGenerator)(TokenCompleteElement) || TokenCompleteElement;
-  TokenCompleteElement = (0, _aureliaFramework.useView)("./text-complete-element.html")(TokenCompleteElement) || TokenCompleteElement;
-  TokenCompleteElement = (0, _aureliaFramework.customElement)("text-complete")(TokenCompleteElement) || TokenCompleteElement;
+  TokenCompleteElement = (0, _aureliaFramework.useView)("./token-complete-element.html")(TokenCompleteElement) || TokenCompleteElement;
+  TokenCompleteElement = (0, _aureliaFramework.customElement)("token-complete")(TokenCompleteElement) || TokenCompleteElement;
   return TokenCompleteElement;
 })();
 

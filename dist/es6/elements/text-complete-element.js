@@ -1,11 +1,12 @@
 import {inject, customElement, useView, bindable} from 'aurelia-framework'
 import {StrategyGenerator} from "../generator/strategy-generator"
 import jquery from "jquery"
+import textcomplete from "yuku-t/jquery-textcomplete"
 
-@customElement('text-complete')
-@useView("./text-complete-element.html")
+@customElement('token-complete')
+@useView("./token-complete-element.html")
 @inject(StrategyGenerator)
-export class TokenCompleteElement {
+export class TokenCompleteElement {gulp
   @bindable token;
   @bindable search;
   @bindable replace;
@@ -29,6 +30,6 @@ export class TokenCompleteElement {
     var matchRegex = this.strategyGenerator.getDefaultMatch(this.token);
     var strategy = this.strategyGenerator.createStrategy(matchRegex, this.search, this.replace, 2, this.template);
 
-    jquery(_textArea).textcomplete([strategy], this.nativeOptions);
+    jquery(this._textArea).textcomplete([strategy], this.nativeOptions);
   }
 }
