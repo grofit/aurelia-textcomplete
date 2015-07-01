@@ -10,5 +10,7 @@ define(["exports", "./generator/strategy-generator", "./generator/default-strate
         aurelia.container.registerInstance(_generatorStrategyGenerator.StrategyGenerator, new _generatorDefaultStrategyGenerator.DefaultStrategyGenerator());
         aurelia.globalizeResources("./elements/text-complete-element");
         aurelia.globalizeResources("./elements/token-complete-element");
+        aurelia.globalizeResources("./attributes/text-complete-attribute");
+        aurelia.globalizeResources("./attributes/token-complete-attribute");
     }
 });

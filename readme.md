@@ -38,16 +38,16 @@ The above examples make it look a bit easier than it actually would be in real w
 complex data and will need to do complex ajax searches and put custom templates out there with styling. However these 2 bindings
 at least go part of the way to streamline things as much as possible.
 
-There are 2 custom elements available, one is geared for premade strategies and one is for easier view setup
+There are 2 custom elements available as well as 2 custom attributes, one is geared for premade strategies and one is for easier view setup
 
-### text-complete element
+### text-complete element/attribute
 
 The available options for this binding are:
 
 * **strategies** - An array taking 1-N strategies which define how the text complete behaves, you can read more below.
 * **native-options** - The options to use for the text completion, based upon the options object in the jquery-textcomplete documentation.
 
-### token-complete element
+### token-complete element/attribute
 
 The available options for this binding are:
 
@@ -56,6 +56,8 @@ The available options for this binding are:
 * **replace** - An optional method to be used for replacing content in the textarea, this is used within the underlying framework so it passes the value into the method and expects a resulting string containing the $1 result of its regex and the value selected from the options returned from the search
 * **template** - An optional method to return a template for display within the results from the search, this will be added to the DOM and is passed the value from the search step.
 * **native-options** - The options to use for the text completion, based upon the options object in the jquery-textcomplete documentation.
+
+If you are using the attribute versions they will need to be applied to a `textarea` or something with `contentEditable`.
 
 ### Helper methods
 

@@ -6,7 +6,8 @@ import textcomplete from "yuku-t/jquery-textcomplete"
 @customElement('token-complete')
 @useView("./token-complete-element.html")
 @inject(StrategyGenerator)
-export class TokenCompleteElement {gulp
+export class TokenCompleteElement
+{
   @bindable token;
   @bindable search;
   @bindable replace;

@@ -1,11 +1,12 @@
 {
   "name": "aurelia-textcomplete",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "registry": "jspm",
   "description": "A simple but powerful textcomplete plugin for aurelia, uses jquery-textcomplete under the hood",
   "keywords": [
     "aurelia",
     "elements",
+    "attributes",
     "textcomplete",
     "autocomplete"
   ],

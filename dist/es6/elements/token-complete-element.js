@@ -4,7 +4,8 @@ import textcomplete from "yuku-t/jquery-textcomplete"
 
 @customElement('text-complete')
 @useView("./text-complete-element.html")
-export class TextCompleteElement {
+export class TextCompleteElement
+{
   @bindable strategies;
   @bindable nativeOptions;
 
