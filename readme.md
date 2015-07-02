@@ -10,7 +10,7 @@ Install using JSPM:
 
 then include into aurelia plugins
 
-`aurelia.use.plugin("aurelia-textcomplete");`
+`aurelia.use.plugin("grofit/aurelia-textcomplete");`
 
 ## Example
 
