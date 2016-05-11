@@ -1,0 +1,47 @@
+/* generic page styles */
+body { font-family: sans-serif; }
+textarea {
+    width: 30em;
+    height: 8em;
+    line-height: 1em;
+    padding: 0.5em;
+}
+input, button { padding: 0.5em; }
+
+.mention-entry,
+.tag-entry
+{
+    display: inline-block;
+}
+
+/* custom text complete styles */
+.dropdown-menu {
+    background: none repeat scroll 0 0 #eee;
+    border: 1px solid #000;
+    cursor: pointer;
+    line-height: 1.2em;
+    list-style: outside none none;
+    padding: 0;
+}
+
+.dropdown-menu li {
+    background: none repeat scroll 0 0 #fff;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.dropdown-menu li:hover {
+    background: none repeat scroll 0 0 #aaa;
+}
+
+/* custom templates */
+.tag-entry-name {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+.tag-entry-description {
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+}

@@ -6,18 +6,23 @@ System.register(["./generator/strategy-generator", "./generator/default-strategy
     _export("configure", configure);
 
     function configure(aurelia) {
+        aurelia.globalResources("./elements/text-complete-element");
+        aurelia.globalResources("./elements/token-complete-element");
+        aurelia.globalResources("./attributes/text-complete-attribute");
+        aurelia.globalResources("./attributes/token-complete-attribute");
+
         aurelia.container.registerInstance(StrategyGenerator, new DefaultStrategyGenerator());
-        aurelia.globalizeResources("./elements/text-complete-element");
-        aurelia.globalizeResources("./elements/token-complete-element");
-        aurelia.globalizeResources("./attributes/text-complete-attribute");
-        aurelia.globalizeResources("./attributes/token-complete-attribute");
     }
 
     return {
         setters: [function (_generatorStrategyGenerator) {
             StrategyGenerator = _generatorStrategyGenerator.StrategyGenerator;
+
+            _export("StrategyGenerator", _generatorStrategyGenerator.StrategyGenerator);
         }, function (_generatorDefaultStrategyGenerator) {
             DefaultStrategyGenerator = _generatorDefaultStrategyGenerator.DefaultStrategyGenerator;
+
+            _export("DefaultStrategyGenerator", _generatorDefaultStrategyGenerator.DefaultStrategyGenerator);
         }],
         execute: function () {}
     };

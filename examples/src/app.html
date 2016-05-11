@@ -1,0 +1,51 @@
+<template>
+    <h2>With Custom Mention Strategy</h2>
+    <textarea id="strategy-based-textcomplete" text-complete="strategies.bind: [mentionStrategy]; options.bind: { maxCount: 5 }"></textarea>
+    <p>If you put an @ symbol in at any point it will attempt to auto complete from the list below, feel free to add or remove more at runtime and see how it acts.</p>
+
+    <h2>With Simple Token Strategy</h2>
+    <textarea id="token-based-textcomplete" token-complete="token: #; search.bind: tagSearch; options.bind: { maxCount: 5 }"></textarea>
+    <p>If you put an # symbol in at any point it will attempt to auto complete from the list below, feel free to add or remove more at runtime and see how it acts.</p>
+
+    <h2>With Complex Token Strategy</h2>
+    <textarea id="complex-token-based-textcomplete" token-complete="token: #; search.bind: complexTagSearch; replace.bind: tagReplace; template.bind: tagTemplate; options.bind: { maxCount: 5 }"></textarea>
+    <p>If you put an # symbol in at any point it will attempt to auto complete from the list below with a custom template and custom replacing mechanism.</p>
+    <p>As custom templates deal with view related concerns I have kept the logic for that outside of the VM, however you can put it where you want.</p>
+
+    <h2>With Multiple Strategies</h2>
+    <textarea id="multiple-strategy-based-textcomplete" text-complete="strategies.bind: [mentionStrategy, tagStrategy]; options.bind: { maxCount: 5 }"></textarea>
+    <p>If you put an @ symbol in you will get mentions, if you put a # you get tags.</p>
+
+
+    <fieldset>
+        <legend>Mentions</legend>
+        <h3>Create New Mention</h3>
+        <input id="new-first-name" value.bind="newMention.firstname" placeholder="First Name"/>
+        <input id="new-surname" value.bind="newMention.surname" placeholder="Surname"/>
+        <button id="add-new-mention" click.delegate="addMention()">Add New Mention</button>
+        <h3>Mention List</h3>
+        <div id="mentions-list" repeat.for="i of mentions.length">
+            <div class="mention-entry">
+                <input class="first-name" value.bind="mentions[i].firstname" />
+                <input class="surname-name" value.bind="mentions[i].surname" />
+                <button class="delete-mention" click.delegate="$parent.deleteMention(i)">Delete</button>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Tags</legend>
+        <h3>Create New Tag</h3>
+        <input id="tag-name" value.bind="newTag.name" placeholder="Name"/>
+        <input id="tag-description" value.bind="newTag.description" placeholder="Description"/>
+        <button id="add-new-tag" click.delegate="addTag()">Add New Tag</button>
+        <h3>Tag List</h3>
+        <div id="tag-list" repeat.for="i of tags.length">
+            <div class="tag-entry">
+                <input class="tag-name" value.bind="tags[i].name" />
+                <input class="tag-description" value.bind="tags[i].description" />
+                <button class="delete-tag" click.delegate="$parent.deleteTag(i)">Delete</button>
+            </div>
+        </div>
+    </fieldset>
+</template>

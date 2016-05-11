@@ -1,34 +1,20 @@
-import {inject, customAttribute, useView, bindable} from 'aurelia-framework'
-import {StrategyGenerator} from "../generator/strategy-generator"
+import {inject, customAttribute, bindable} from 'aurelia-framework'
 import jquery from "jquery"
-import textcomplete from "yuku-t/jquery-textcomplete"
+import "jquery-textcomplete"
 
-@customAttribute('token-complete')
-@inject(Element, StrategyGenerator)
-export class TokenCompleteAttribute
+@customAttribute('text-complete')
+@inject(Element)
+export class TextCompleteAttribute
 {
-  @bindable token;
-  @bindable search;
-  @bindable replace;
-  @bindable template;
-  @bindable nativeOptions;
+  @bindable strategies;
+  @bindable options;
 
-  constructor(element, strategyGenerator) {
+  constructor(element)
+  {
     this.element = element;
-    this.strategyGenerator = strategyGenerator;
   }
 
-  attached()
-  {
-    if(!this.template)
-    { this.template = this.strategyGenerator.getDefaultTemplate(); }
-
-    if(!this.replace)
-    { this.replace = this.strategyGenerator.getDefaultReplace(this.token); }
-
-    var matchRegex = this.strategyGenerator.getDefaultMatch(this.token);
-    var strategy = this.strategyGenerator.createStrategy(matchRegex, this.search, this.replace, 2, this.template);
-
-    jquery(this.element).textcomplete([strategy], this.nativeOptions);
+  attached() {
+    jquery(this.element).textcomplete(this.strategies, this.options);
   }
 }

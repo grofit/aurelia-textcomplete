@@ -1,4 +1,4 @@
-define(["exports", "aurelia-framework", "../generator/strategy-generator", "jquery", "yuku-t/jquery-textcomplete"], function (exports, _aureliaFramework, _generatorStrategyGenerator, _jquery, _yukuTJqueryTextcomplete) {
+define(["exports", "aurelia-framework", "jquery", "jquery-textcomplete"], function (exports, _aureliaFramework, _jquery, _jqueryTextcomplete) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -11,81 +11,43 @@ define(["exports", "aurelia-framework", "../generator/strategy-generator", "jque
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer.call(target); Object.defineProperty(target, key, descriptor); }
+  function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer ? descriptor.initializer.call(target) : undefined; Object.defineProperty(target, key, descriptor); }
 
   var _jquery2 = _interopRequireDefault(_jquery);
 
-  var _textcomplete = _interopRequireDefault(_yukuTJqueryTextcomplete);
-
-  var TokenCompleteElement = (function () {
+  var TextCompleteElement = (function () {
     var _instanceInitializers = {};
 
-    function TokenCompleteElement(strategyGenerator) {
-      _classCallCheck(this, _TokenCompleteElement);
+    function TextCompleteElement() {
+      _classCallCheck(this, _TextCompleteElement);
 
-      _defineDecoratedPropertyDescriptor(this, "token", _instanceInitializers);
+      _defineDecoratedPropertyDescriptor(this, "strategies", _instanceInitializers);
 
-      _defineDecoratedPropertyDescriptor(this, "search", _instanceInitializers);
-
-      _defineDecoratedPropertyDescriptor(this, "replace", _instanceInitializers);
-
-      _defineDecoratedPropertyDescriptor(this, "template", _instanceInitializers);
-
-      _defineDecoratedPropertyDescriptor(this, "nativeOptions", _instanceInitializers);
-
-      this.strategyGenerator = strategyGenerator;
+      _defineDecoratedPropertyDescriptor(this, "options", _instanceInitializers);
     }
 
-    var _TokenCompleteElement = TokenCompleteElement;
-
-    _createDecoratedClass(_TokenCompleteElement, [{
+    _createDecoratedClass(TextCompleteElement, [{
       key: "attached",
       value: function attached() {
-        if (!this.template) {
-          this.template = this.strategyGenerator.getDefaultTemplate();
-        }
-
-        if (!this.replace) {
-          this.replace = this.strategyGenerator.getDefaultReplace(this.token);
-        }
-
-        var matchRegex = this.strategyGenerator.getDefaultMatch(this.token);
-        var strategy = this.strategyGenerator.createStrategy(matchRegex, this.search, this.replace, 2, this.template);
-
-        (0, _jquery2["default"])(this._textArea).textcomplete([strategy], this.nativeOptions);
+        (0, _jquery2["default"])(this._textArea).textcomplete(this.strategies, this.options);
       }
     }, {
-      key: "token",
+      key: "strategies",
       decorators: [_aureliaFramework.bindable],
       initializer: null,
       enumerable: true
     }, {
-      key: "search",
-      decorators: [_aureliaFramework.bindable],
-      initializer: null,
-      enumerable: true
-    }, {
-      key: "replace",
-      decorators: [_aureliaFramework.bindable],
-      initializer: null,
-      enumerable: true
-    }, {
-      key: "template",
-      decorators: [_aureliaFramework.bindable],
-      initializer: null,
-      enumerable: true
-    }, {
-      key: "nativeOptions",
+      key: "options",
       decorators: [_aureliaFramework.bindable],
       initializer: null,
       enumerable: true
     }], null, _instanceInitializers);
 
-    TokenCompleteElement = (0, _aureliaFramework.inject)(_generatorStrategyGenerator.StrategyGenerator)(TokenCompleteElement) || TokenCompleteElement;
-    TokenCompleteElement = (0, _aureliaFramework.useView)("./token-complete-element.html")(TokenCompleteElement) || TokenCompleteElement;
-    TokenCompleteElement = (0, _aureliaFramework.customElement)("token-complete")(TokenCompleteElement) || TokenCompleteElement;
-    return TokenCompleteElement;
+    var _TextCompleteElement = TextCompleteElement;
+    TextCompleteElement = (0, _aureliaFramework.useView)("./text-complete-element.html")(TextCompleteElement) || TextCompleteElement;
+    TextCompleteElement = (0, _aureliaFramework.customElement)('text-complete')(TextCompleteElement) || TextCompleteElement;
+    return TextCompleteElement;
   })();
 
-  exports.TokenCompleteElement = TokenCompleteElement;
+  exports.TextCompleteElement = TextCompleteElement;
 });

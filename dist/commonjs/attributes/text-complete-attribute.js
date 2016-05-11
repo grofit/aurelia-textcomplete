@@ -10,88 +10,53 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer.call(target); Object.defineProperty(target, key, descriptor); }
+function _defineDecoratedPropertyDescriptor(target, key, descriptors) { var _descriptor = descriptors[key]; if (!_descriptor) return; var descriptor = {}; for (var _key in _descriptor) descriptor[_key] = _descriptor[_key]; descriptor.value = descriptor.initializer ? descriptor.initializer.call(target) : undefined; Object.defineProperty(target, key, descriptor); }
 
-var _aureliaFramework = require("aurelia-framework");
-
-var _generatorStrategyGenerator = require("../generator/strategy-generator");
+var _aureliaFramework = require('aurelia-framework');
 
 var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _yukuTJqueryTextcomplete = require("yuku-t/jquery-textcomplete");
+require("jquery-textcomplete");
 
-var _yukuTJqueryTextcomplete2 = _interopRequireDefault(_yukuTJqueryTextcomplete);
-
-var TokenCompleteAttribute = (function () {
+var TextCompleteAttribute = (function () {
+  var _instanceInitializers = {};
   var _instanceInitializers = {};
 
-  function TokenCompleteAttribute(element, strategyGenerator) {
-    _classCallCheck(this, _TokenCompleteAttribute);
-
-    _defineDecoratedPropertyDescriptor(this, "token", _instanceInitializers);
-
-    _defineDecoratedPropertyDescriptor(this, "search", _instanceInitializers);
-
-    _defineDecoratedPropertyDescriptor(this, "replace", _instanceInitializers);
-
-    _defineDecoratedPropertyDescriptor(this, "template", _instanceInitializers);
-
-    _defineDecoratedPropertyDescriptor(this, "nativeOptions", _instanceInitializers);
-
-    this.element = element;
-    this.strategyGenerator = strategyGenerator;
-  }
-
-  var _TokenCompleteAttribute = TokenCompleteAttribute;
-
-  _createDecoratedClass(_TokenCompleteAttribute, [{
-    key: "attached",
-    value: function attached() {
-      if (!this.template) {
-        this.template = this.strategyGenerator.getDefaultTemplate();
-      }
-
-      if (!this.replace) {
-        this.replace = this.strategyGenerator.getDefaultReplace(this.token);
-      }
-
-      var matchRegex = this.strategyGenerator.getDefaultMatch(this.token);
-      var strategy = this.strategyGenerator.createStrategy(matchRegex, this.search, this.replace, 2, this.template);
-
-      (0, _jquery2["default"])(this.element).textcomplete([strategy], this.nativeOptions);
-    }
-  }, {
-    key: "token",
+  _createDecoratedClass(TextCompleteAttribute, [{
+    key: "strategies",
     decorators: [_aureliaFramework.bindable],
     initializer: null,
     enumerable: true
   }, {
-    key: "search",
-    decorators: [_aureliaFramework.bindable],
-    initializer: null,
-    enumerable: true
-  }, {
-    key: "replace",
-    decorators: [_aureliaFramework.bindable],
-    initializer: null,
-    enumerable: true
-  }, {
-    key: "template",
-    decorators: [_aureliaFramework.bindable],
-    initializer: null,
-    enumerable: true
-  }, {
-    key: "nativeOptions",
+    key: "options",
     decorators: [_aureliaFramework.bindable],
     initializer: null,
     enumerable: true
   }], null, _instanceInitializers);
 
-  TokenCompleteAttribute = (0, _aureliaFramework.inject)(Element, _generatorStrategyGenerator.StrategyGenerator)(TokenCompleteAttribute) || TokenCompleteAttribute;
-  TokenCompleteAttribute = (0, _aureliaFramework.customAttribute)("token-complete")(TokenCompleteAttribute) || TokenCompleteAttribute;
-  return TokenCompleteAttribute;
+  function TextCompleteAttribute(element) {
+    _classCallCheck(this, _TextCompleteAttribute);
+
+    _defineDecoratedPropertyDescriptor(this, "strategies", _instanceInitializers);
+
+    _defineDecoratedPropertyDescriptor(this, "options", _instanceInitializers);
+
+    this.element = element;
+  }
+
+  _createDecoratedClass(TextCompleteAttribute, [{
+    key: "attached",
+    value: function attached() {
+      (0, _jquery2["default"])(this.element).textcomplete(this.strategies, this.options);
+    }
+  }], null, _instanceInitializers);
+
+  var _TextCompleteAttribute = TextCompleteAttribute;
+  TextCompleteAttribute = (0, _aureliaFramework.inject)(Element)(TextCompleteAttribute) || TextCompleteAttribute;
+  TextCompleteAttribute = (0, _aureliaFramework.customAttribute)('text-complete')(TextCompleteAttribute) || TextCompleteAttribute;
+  return TextCompleteAttribute;
 })();
 
-exports.TokenCompleteAttribute = TokenCompleteAttribute;
+exports.TextCompleteAttribute = TextCompleteAttribute;

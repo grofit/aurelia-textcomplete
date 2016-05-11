@@ -45,7 +45,7 @@ There are 2 custom elements available as well as 2 custom attributes, one is gea
 The available options for this binding are:
 
 * **strategies** - An array taking 1-N strategies which define how the text complete behaves, you can read more below.
-* **native-options** - The options to use for the text completion, based upon the options object in the jquery-textcomplete documentation.
+* **options** - The options to use for the text completion, based upon the options object in the jquery-textcomplete documentation.
 
 ### token-complete element/attribute
 
@@ -55,7 +55,7 @@ The available options for this binding are:
 * **search** - The search method to use for querying the given term against a data set, this needs to accept a term and callback which should consume the results of elements matching the term.
 * **replace** - An optional method to be used for replacing content in the textarea, this is used within the underlying framework so it passes the value into the method and expects a resulting string containing the $1 result of its regex and the value selected from the options returned from the search
 * **template** - An optional method to return a template for display within the results from the search, this will be added to the DOM and is passed the value from the search step.
-* **native-options** - The options to use for the text completion, based upon the options object in the jquery-textcomplete documentation.
+* **options** - The options to use for the text completion, based upon the options object in the jquery-textcomplete documentation.
 
 If you are using the attribute versions they will need to be applied to a `textarea` or something with `contentEditable`.
 
