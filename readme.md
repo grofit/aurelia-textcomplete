@@ -10,9 +10,12 @@ Install using JSPM:
 
 then include into aurelia plugins
 
-`aurelia.use.plugin("grofit/aurelia-textcomplete");`
+`aurelia.use.plugin("aurelia-textcomplete");`
 
 ## Example
+
+There are some live examples here:
+[View Live Examples](https://rawgit.com/grofit/aurelia-textcomplete/master/examples/index.html)
 
 A simple example of using a token to drive text completion, this will specify a token and then a search method:
 ```
